@@ -1861,6 +1861,7 @@ SYSCALL_DEFINE4(accept4, int, fd, struct sockaddr __user *, upeer_sockaddr,
 SYSCALL_DEFINE3(accept, int, fd, struct sockaddr __user *, upeer_sockaddr,
 		int __user *, upeer_addrlen)
 {
+	printk(KERN_INFO "Hi World!, from accept()\n");
 	return __sys_accept4(fd, upeer_sockaddr, upeer_addrlen, 0);
 }
 
